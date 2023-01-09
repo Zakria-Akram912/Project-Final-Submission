@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../includes/head.ejs") %>
+  <body>
+    <%- include("../includes/navigation.ejs") %>
+
+    <div class="container-main">
+      <div class="shop-page-container">
+        <div class="filter">
+          <select name="" id="">
+            <option value="">Sort By:</option>
+            <option value="">Price(Low to High)</option>
+            <option value="">Price(High to Low)</option>
+            <option value="">Alphabetic(A-Z)</option>
+            <option value="">Alphabetic(Z-A)</option>
+          </select>
+        </div>
+        <div class="shop-page-main-flex">
+          <div class="flex-left-width">
+            <h6 class="category-heading">Categories</h6>
+            <ul class="product-categories">
+              <li><a href="#">Darker Blends</a></li>
+              <li><a href="#">Medium Blends</a></li>
+              <li><a href="#">Lighter Blends</a></li>
+              <li><a href="#">Decaf</a></li>
+              <li><a href="#">Single Origin</a></li>
+            </ul>
+          </div>
+          <main>
+            <% if (prods.length > 0) { %>
+            <div class="grid grid-shop">
+              <% for (let product of prods) { %>
+              <article class="card product-item">
+                <header class="card__header">
+                  <h1
+                    class="product__title"
+                    style="
+                      display: -webkit-box;
+                      -webkit-line-clamp: 2;
+                      -webkit-box-orient: vertical;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                      min-height: 55px;
+                    "
+                  >
+                    <%= product.title %>
+                  </h1>
+                </header>
+                <div class="card__image">
+                  <img
+                    src="<%= product.imageUrl %>"
+                    alt="<%= product.title %>"
+                  />
+                </div>
+                <div class="card__content">
+                  <h2 class="product__price">$ <%= product.price %></h2>
+                  <p
+                    class="product__description"
+                    style="
+                      display: -webkit-box;
+                      -webkit-line-clamp: 2;
+                      -webkit-box-orient: vertical;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                    "
+                  >
+                    <%= product.description %>
+                  </p>
+                </div>
+                <div class="card__actions">
+                  <div class="pro-btns">
+                    <a href="/shop/<%= product._id %>" class="btn">Details</a>
+                    <form action="/cart" method="POST">
+                      <button class="btn" type="submit">Add to Cart</button>
+                      <input
+                        type="hidden"
+                        name="productId"
+                        value="<%= product._id %>"
+                      />
+                    </form>
+                  </div>
+                </div>
+              </article>
+              <% } %>
+            </div>
+            <% } else { %>
+            <h1>No Products Found!</h1>
+            <% } %>
+          </main>
+        </div>
+      </div>
+    </div>
+    <%- include("../includes/footer.ejs") %>
+  </body>
+</html>

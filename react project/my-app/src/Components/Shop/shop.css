@@ -1,0 +1,28 @@
+.filter {
+  text-align: right;
+}
+
+.shop-main {
+  max-width: 80%;
+  margin: 30px auto 0px;
+}
+
+.filter select {
+  padding: 10px;
+  border-radius: 8px;
+  width: 200px;
+}
+
+.shop-main-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shop-single-product {
+  width: 32%;
+  margin-top: 40px;
+}
+
+.shop-single-product:nth-child(3n + 2) {
+  padding: 0px 21px;
+}

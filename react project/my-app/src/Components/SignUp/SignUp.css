@@ -1,0 +1,69 @@
+.signup-heading {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.signup-input-field {
+  margin-bottom: 15px;
+}
+
+.signup-input-field input {
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid grey;
+  padding: 0px 10px;
+  font-size: 14px;
+  background: transparent;
+  color: black;
+  width: 100%;
+}
+
+.signup-input-field input:focus-visible {
+  border: 1px solid white;
+  outline: none;
+}
+
+.signup-btn {
+  text-align: center;
+}
+
+.signup-btn button {
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: none;
+  color: black;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: #302b63;
+  transition: all 0.4s ease-in-out;
+  color: white;
+}
+
+.signup-btn button:hover {
+  background: #252149;
+  box-shadow: 2px 2px 10px #000;
+  cursor: pointer;
+}
+
+p.signup-acc-created {
+  color: black;
+  margin-top: 20px;
+  word-spacing: 2px;
+  font-size: 14px;
+}
+
+p.signup-acc-created a {
+  color: #302b63;
+  font-weight: 600;
+}
+
+p.form-error {
+  color: red;
+  margin-top: 5px;
+}
+
+p.form-error.signin-success {
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}

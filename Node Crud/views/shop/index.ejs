@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../includes/head.ejs") %>
+  <body>
+    <%- include('../includes/navigation.ejs') %>
+
+    <!-- For Banner -->
+    <section>
+      <div class="banner" style="background-image: url('/images/banner.png')">
+        <div class="banner-content-main">
+          <div class="banner-content">
+            <h1>We Provide Best Coffee In Town</h1>
+            <p>
+              Mauris neque nisi, faucibus non elementum in, convallis et eros.
+              Sed pretium sem libero, vel pellentesque purus ultrices ut. In
+              quis leo id massa pulvinar euismod cursus non justo. Sed sagittis
+              et urna non efficitur.
+            </p>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End of banner section -->
+
+    <!-- For About Us -->
+    <section id="about-section">
+      <div class="container-main">
+        <div class="about-us-main">
+          <div class="about-us-heading">
+            <h2>About Us</h2>
+          </div>
+          <div class="about-us-content">
+            <p>
+              We are selling natural sustainable coffee that is produced in
+              Colombia. Our coffee beans are grown in its natural habitat under
+              the shades of a forest, which promotes the ecosystem around it as
+              well reducing the climate and economic impacts compared to the
+              regular, industrial coffee farms of today. We would like for our
+              website to be able to convey that natural, green message around
+              its design.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- End of About us -->
+
+    <h2 class="new-products-heading">Feature Products</h2>
+    <% if (prods.length > 4) { %>
+    <div class="grid container-main no-wrapper">
+      <% prods.forEach(function(prods,index){ %> <% if(index < 4){ %> <% index--
+      %>
+      <article class="card product-item">
+        <header class="card__header">
+          <h1
+            class="product__title"
+            style="
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              min-height: 55px;
+            "
+          >
+            <%= prods.title %>
+          </h1>
+        </header>
+        <div class="card__image">
+          <img src="<%= prods.imageUrl %>" alt="<%= prods.title %>" />
+        </div>
+        <div class="card__content">
+          <h2 class="product__price">$<%= prods.price %></h2>
+          <p
+            class="product__description"
+            style="
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            "
+          >
+            <%= prods.description %>
+          </p>
+        </div>
+        <div class="card__actions">
+          <div class="pro-btns">
+            <a
+              href="/shop/<%= prods._id %>"
+              class="btn"
+              style="margin-bottom: 5px"
+              >Details</a
+            >
+            <form action="/cart" method="POST">
+              <button class="btn" type="submit">Add to Cart</button>
+              <input type="hidden" name="productId" value="<%= prods._id %>" />
+            </form>
+          </div>
+        </div>
+      </article>
+      <% } %> <% }) %>
+    </div>
+    <% } else { %>
+    <!-- <h1>No Products Found!</h1> -->
+    <% } %> <%- include("../includes/footer.ejs") %>
+  </body>
+</html>

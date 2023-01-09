@@ -1,0 +1,83 @@
+.form-wrapper {
+  max-width: 400px;
+  min-width: 400px;
+}
+
+.form-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 5px 10px 20px rgb(0 0 0 / 30%);
+}
+
+.signin-form-heading {
+  color: black;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.signin-field {
+  margin-bottom: 15px;
+}
+
+.signin-field input {
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid grey;
+  background: transparent;
+  color: black;
+  font-size: 14px;
+  padding: 0px 10px;
+  width: 100%;
+}
+
+.signin-btn {
+  text-align: center;
+}
+
+.signin-btn button {
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: none;
+  color: black;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: #302b63;
+  transition: all 0.4s ease-in-out;
+  color: white;
+}
+
+.signin-field input:focus-visible {
+  outline: none;
+}
+
+.signin-btn button:hover {
+  background: #252149;
+  box-shadow: 2px 2px 10px #000;
+  cursor: pointer;
+}
+
+.signup-link p {
+  color: black;
+  font-size: 14px;
+}
+
+.signup-link p a {
+  color: #302b63;
+  font-weight: 600;
+}
+
+.signup-link {
+  margin-top: 20px;
+}
+
+.signin-error {
+  text-align: center;
+  color: red;
+  font-size: 12px;
+  margin-bottom: 10px;
+}

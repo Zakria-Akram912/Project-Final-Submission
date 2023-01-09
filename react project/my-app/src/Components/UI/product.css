@@ -1,0 +1,29 @@
+.product-image img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.product-info h6 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.product-info p {
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.product-info {
+  margin: 10px 0px;
+}
+
+.productbtn button {
+  background: black;
+  color: white;
+  padding: 10px 20px;
+  font-weight: 600;
+  margin-right: 10px;
+  font-family: "Montserrat", sans-serif;
+}

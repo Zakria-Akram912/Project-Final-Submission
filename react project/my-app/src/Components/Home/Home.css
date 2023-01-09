@@ -1,0 +1,44 @@
+li {
+  list-style: none;
+}
+
+.brands {
+  max-width: 80%;
+  margin: 40px auto;
+}
+
+ul.brands-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul.brands-list li {
+  width: 13%;
+}
+
+ul.brands-list li img {
+  width: 100%;
+}
+
+.home-products-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-newproducts {
+  max-width: 90%;
+  margin: 0 auto;
+  border-top: 1px solid rgb(0, 0, 0, 0.4);
+  padding-top: 30px;
+}
+
+.home-product-width {
+  width: 23%;
+}
+
+.home-newproducts h2 {
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 30px;
+}

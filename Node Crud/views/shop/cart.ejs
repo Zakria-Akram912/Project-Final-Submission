@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../includes/head.ejs") %>
+  <body>
+    <%- include('../includes/navigation.ejs') %>
+    <div class="cart-container">
+      <h1 style="margin-bottom: 20px; color: #624933">Your Shopping Cart</h1>
+      <% if (cart.length > 0) { let TotalAmount = 0 %>
+      <div class="cart-items">
+        <% for (let item of cart) { TotalAmount += item.price %>
+        <div class="single-cart-item">
+          <div class="single-cart-item-img">
+            <img src="<%= item.imageUrl %>" alt="<%= item.title %>" />
+          </div>
+          <div class="single-cart-item-content">
+            <p><%= item.title %></p>
+            <h4>$ <%= item.price %></h4>
+          </div>
+          <div class="single-cart-item-btn">
+            <form action="/remove-cart" method="POST">
+              <button type="submit">Remove Item</button>
+              <input type="hidden" value="<%= item._id %>" name="productId" />
+            </form>
+          </div>
+        </div>
+        <% } %>
+      </div>
+      <div class="cart-total">
+        <p>Total Amount: $<%= (TotalAmount).toFixed(2) %></p>
+      </div>
+      <% } else { %>
+      <h1>No Product in cart</h1>
+      <% } %>
+    </div>
+    <%- include("../includes/footer.ejs") %>
+  </body>
+</html>
